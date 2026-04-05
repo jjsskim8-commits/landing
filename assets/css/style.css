@@ -43,6 +43,7 @@ img {
 .header__nav {
     flex: 1;
     display: flex;
+    
     justify-content: flex-end;
     padding-right: 60px;
 }
@@ -59,7 +60,6 @@ img {
 /* 오른쪽아이콘 */
 .header__icons {
     display: flex;
-    gap: 30px;
 }
 
 .header__icon_link {
@@ -90,7 +90,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
     width: 100%;
 }
 
@@ -105,13 +105,13 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 30px;
 }
 
 .hero__button {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     padding: 14px 28px;
-    margin: 0 0 30px 100px;
     border-radius: 500px;
     background: #FFDFBF;
     font-size: 30px;
@@ -129,10 +129,10 @@ img {
 }
 
 .hero__desc {
-    margin: 0 0 30px;
+    margin: 0;
     width: 400px;
     font-size: 32px;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #4b403c;
 }
 
@@ -140,7 +140,6 @@ img {
     margin: 0;
     font-family: "Nanummyeongjo", sans-serif;
     font-size: 40px;
-    line-height: 1.05;
     color: #926A55;
 }
 
@@ -225,9 +224,8 @@ img {
     line-height: 1.6;
     word-break: keep-all;
 }
-
-.product {
-    padding: 140px 0 160px;
+.product { 
+    margin:0;
     background: #ffffff;
 }
 
@@ -237,6 +235,7 @@ img {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    padding: 90px 0;
     gap: 110px;
 }
 
@@ -272,7 +271,7 @@ img {
 
 .product__img {
     position: absolute;
-    right: -42px;
+    right: -90px;
     bottom: -18px;
     width: 175px;
     z-index: 2;
@@ -307,4 +306,146 @@ img {
     line-height: 1.65;
     color: #272727;
     word-break: keep-all;
+}
+
+.product02 {
+    margin: 0;
+}
+.product02__inner{
+    display: flex;
+    width: min(1280px, calc(100% - 160px));
+    margin: 0 auto;
+    padding: 90px 0;
+    gap: 110px;
+}
+.product02__left{
+    display: flex;
+    flex-direction: column;
+}
+.product02__line {
+    width: 400px;
+    height: 2px;
+    margin: 16px 0 22px;
+    background: #1f1f1f;
+}
+.product02__title{
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+.product02__desc{
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #272727;
+}
+
+.product02__right{
+    width: 50%;
+    align-items: center;
+}
+.product02__visual{
+    position: relative;
+    width: 460px;
+    flex-shrink: 0;
+    padding-right: 100px;;
+}
+.product02__img {
+    position: absolute;
+    left: 0;
+    top: 60%;
+    transform: translateX(-50%);
+    width: 175px;
+}
+.product02__label {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    margin: 0;
+    transform: translateY(20%);
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 30px;
+    line-height: 1;
+    color: #EF8099;
+    writing-mode: vertical-rl;
+}
+.product03{
+    margin: 0;
+    background: #ffffff;
+}
+
+.product03__inner{
+    width: min(1280px, calc(100% - 160px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 90px 0;
+    gap: 110px;
+}
+
+.product03__left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product03__label{
+    margin: 0;
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 30px;
+    line-height: 1;
+    color: #F2996B;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg) translateY(-70%);
+    flex-shrink: 0;
+
+}
+
+.product03__visual{
+    width: 460px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.product03__bg{
+    display: block;
+    width: 100%;
+}
+
+.product03__img{
+    display: block;
+    width: 175px;
+    margin-left: -85px;
+    margin-bottom: -30px;
+    flex-shrink: 0;
+}
+
+.product03__right{
+    flex: 1;
+    max-width: 500px;
+    align-self: flex-start;
+}
+
+.product03__title{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #272727;
+    letter-spacing: 0.03em;
+}
+
+.product03__line{
+    display: block;
+    width: 400px;
+    height: 2px;
+    margin: 16px 0 22px;
+    background: #1f1f1f;
+}
+
+.product03__desc{
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #272727;
 }
