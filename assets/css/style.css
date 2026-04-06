@@ -4,448 +4,150 @@
     box-sizing: border-box;
 }
 
+
+
 body {
-    width: 100%;
     min-height: 100vh;
-    margin: 0;
-    font-family: "pretendard", sans-serif;
     background: #ddd0cd;
-    color: #3d312d;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
 }
 
 img {
     display: block;
-    max-width: 100%;
-}
-
-.inner {
-    width: min(1280px, calc(100% - 120px));
-    margin: 0 auto;
-}
-
-
-
-.header{
-    display: flex;
-    align-items: center;
-    height: 100px;
-}
-.header_left{
-    flex: 1;
-}
-
-
-.header__nav {
-    flex: 1;
-    display: flex;
-    
-    justify-content: flex-end;
-    padding-right: 60px;
-}
-/* 로고 */
-.header__logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 50%;
-}
-.header__logo img {
-    height: 60px;
-}
-/* 오른쪽아이콘 */
-.header__icons {
-    display: flex;
-}
-
-.header__icon_link {
-    width: 32px;
-    height: 32px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header__icon_link img {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-}
-
-
-/* hero */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ddd0cd;
-}
-
-.hero__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
     width: 100%;
+    height: auto;
 }
 
-.hero__visual {
-    flex: 0 0 700px;
+/* header */
+.header{
+    width: 100%;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.header__left{
+    display: flex;
+    flex: 1;
+}
+.header__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+.header__nav{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    padding-right: 50px;
+}
+
+.header__icons img{
+    width: 24px;
+    height: 24px;
+}
+.hero {
+    width: 100%;
+    height: 100vh;
+}
+.hero__inner{
+    width: 100%;
+    display: flex;
+}
+.hero__visual{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    padding: 100px 50px;
+    
 }
 .hero__image{
-    width: 700px;
+    width: 70%;
+    transform: translateX(30%);
+    
 }
-
-.hero__content {
+.hero__content{
+    width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
     gap: 30px;
 }
 
-.hero__button {
-    display: flex;
-    align-items: center;
-    padding: 14px 28px;
-    border-radius: 500px;
+.hero__button{
+    display: inline-block;
+    padding: 20px 20px;
     background: #FFDFBF;
-    font-size: 30px;
     color: #381F16;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-}
-
-.hero__button:hover {
-    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
-}
-
-.hero__button-arrow {
-    font-size: 30px;
-    line-height: 1;
-}
-
-.hero__desc {
-    margin: 0;
-    width: 400px;
-    font-size: 32px;
-    line-height: 1.5;
-    color: #4b403c;
-}
-
-.hero__title {
-    margin: 0;
-    font-family: "Nanummyeongjo", sans-serif;
-    font-size: 40px;
-    color: #926A55;
-}
-
-.about {
-    padding: 80px 0;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)),
-        url("../images/intro-bg.png") no-repeat center / cover;
-}
-
-.about__inner {
-    position: relative;
-    width: min(1400px, calc(100% - 120px));
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.about__visual {
-    display: block;
-    width: 100%;
-    height: auto;
-    position: relative;
-    z-index: 1;
-}
-
-.about__content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 90px;
-    z-index: 2;
-}
-
-.about__left {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    color: #2f2623;
-    flex: 1;
-}
-
-.about__title {
-    margin: 0;
-    font-family: "Nanum Myeongjo", serif;
-    font-size: 88px;
-    line-height: 1;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    text-align: center;
-}
-
-.about__line {
-    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 500px;
     width: 150px;
-    height: 4px;
-    background-color: #2f2623;
-    flex-shrink: 0;
-    margin-top: 30px;
-}
-
-.about__right {
-    display: flex;
-    justify-content: flex-end;
-    flex: 1;
-}
-
-.about__text {
-    width: min(100%, 620px);
-    padding: 34px 38px;
-    border-radius: 24px;
-    background: rgba(70, 62, 66, 0.45);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-.about__desc {
-    margin: 0;
-    color: #ffffff;
-    font-size: 22px;
-    line-height: 1.6;
-    word-break: keep-all;
-}
-.product { 
-    margin:0;
-    background: #ffffff;
-}
-
-.product__inner {
-    width: min(1280px, calc(100% - 160px));
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 90px 0;
-    gap: 110px;
-}
-
-/* 왼쪽 영역 */
-.product__left {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    flex-shrink: 0;
-}
-
-.product__label {
-    margin: 400px 0 0 50px;
-    font-family: "Nanum Myeongjo", serif;
-    font-size: 30px;
-    line-height: 1;
-    color: #FFB131;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    letter-spacing: -0.02em;
-}
-
-.product__visual {
+    text-align: center;
+    transform: translateX(50%);
     position: relative;
-    width: 460px;
-    flex-shrink: 0;
 }
 
-.product__bg {
-    display: block;
-    width: 100%;
-}
-
-.product__img {
-    position: absolute;
-    right: -90px;
-    bottom: -18px;
-    width: 175px;
-    z-index: 2;
-}
-
-/* 오른쪽 영역 */
-.product__right {
-    flex: 1;
-    padding-top: 70px;
-    max-width: 500px;
-}
-
-.product__title {
-    margin: 0;
-    font-size: 28px;
+.hero__button:hover{
+    color: #fff;
     font-weight: 700;
-    color: #272727;
-    letter-spacing: -0.03em;
-}
+    background-color: #381F16;
+    
 
-.product__line {
-    display: block;
-    width: 160px;
-    height: 2px;
-    margin: 16px 0 22px;
-    background: #1f1f1f;
 }
-
-.product__desc {
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.65;
-    color: #272727;
-    word-break: keep-all;
-}
-
-.product02 {
-    margin: 0;
-}
-.product02__inner{
-    display: flex;
-    width: min(1280px, calc(100% - 160px));
-    margin: 0 auto;
-    padding: 90px 0;
-    gap: 110px;
-}
-.product02__left{
-    display: flex;
-    flex-direction: column;
-}
-.product02__line {
-    width: 400px;
-    height: 2px;
-    margin: 16px 0 22px;
-    background: #1f1f1f;
-}
-.product02__title{
-    margin: 0;
-    font-size: 28px;
-    font-weight: 700;
-}
-.product02__desc{
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.65;
-    color: #272727;
-}
-
-.product02__right{
-    width: 50%;
-    align-items: center;
-}
-.product02__visual{
-    position: relative;
-    width: 460px;
-    flex-shrink: 0;
-    padding-right: 100px;;
-}
-.product02__img {
+.hero__button:hover::before{
+    content: '';
     position: absolute;
-    left: 0;
-    top: 60%;
-    transform: translateX(-50%);
-    width: 175px;
+    transition: 0.5s ease;
+    
 }
-.product02__label {
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    margin: 0;
-    transform: translateY(20%);
-    font-family: "Nanum Myeongjo", serif;
+
+.hero__desc{
     font-size: 30px;
-    line-height: 1;
-    color: #EF8099;
-    writing-mode: vertical-rl;
-}
-.product03{
-    margin: 0;
-    background: #ffffff;
-}
-
-.product03__inner{
-    width: min(1280px, calc(100% - 160px));
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    padding: 90px 0;
-    gap: 110px;
-}
-
-.product03__left{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.product03__label{
-    margin: 0;
-    font-family: "Nanum Myeongjo", serif;
-    font-size: 30px;
-    line-height: 1;
-    color: #F2996B;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg) translateY(-70%);
-    flex-shrink: 0;
-
-}
-
-.product03__visual{
-    width: 460px;
-    display: flex;
-    align-items: flex-end;
-}
-
-.product03__bg{
-    display: block;
-    width: 100%;
-}
-
-.product03__img{
-    display: block;
-    width: 175px;
-    margin-left: -85px;
-    margin-bottom: -30px;
-    flex-shrink: 0;
-}
-
-.product03__right{
-    flex: 1;
-    max-width: 500px;
-    align-self: flex-start;
-}
-
-.product03__title{
-    margin: 0;
-    font-size: 30px;
-    font-weight: 700;
+    font-family: 'pretendard';
+    font-weight: 500;
     color: #272727;
-    letter-spacing: 0.03em;
+    line-height: 1.5;
+    transform: translateX(5%);
+}
+.hero__title{
+    font-family: 'Nanum Myeongjo';
+    font-size: 60px;
+    color: #926A55;
+    font-weight: 800;
 }
 
-.product03__line{
-    display: block;
-    width: 400px;
-    height: 2px;
-    margin: 16px 0 22px;
-    background: #1f1f1f;
-}
+@media (max-width: 768px) {
+    .hero__inner {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.product03__desc{
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.65;
-    color: #272727;
+    .hero__visual,
+    .hero__content {
+        width: 100%;
+    }
+
+    .hero__image,
+    .hero__button,
+    .hero__desc {
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .hero__content {
+        align-items: center;
+    }
+
+    .hero__desc {
+        font-size: 20px;
+    }
+
+    .hero__title {
+        font-size: 38px;
+    }
 }
