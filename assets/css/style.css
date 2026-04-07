@@ -2,12 +2,13 @@
 
 * {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 
 
 body {
-    min-height: 100vh;
+    min-height: 100dvh;
     background: #ddd0cd;
 }
 
@@ -37,7 +38,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
+    width: 40px;
 }
 .header__nav{
     display: flex;
@@ -57,16 +58,17 @@ img {
 .hero__inner{
     width: 100%;
     display: flex;
+    gap: 80px;
 }
 .hero__visual{
     display: flex;
     width: 50%;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 100px 50px;
     
 }
 .hero__image{
-    width: 70%;
+    max-width: 500px;
     transform: translateX(30%);
     
 }
@@ -78,36 +80,46 @@ img {
     gap: 30px;
 }
 
-.hero__button{
-    display: inline-block;
-    padding: 20px 20px;
+.hero__button {
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+    padding: 16px 24px;
     background: #FFDFBF;
     color: #381F16;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 500px;
+    border-radius: 999px;
     width: 150px;
-    text-align: center;
-    transform: translateX(50%);
     position: relative;
+    overflow: hidden;
 }
 
 .hero__button:hover{
     color: #fff;
-    font-weight: 700;
-    background-color: #381F16;
-    
-
 }
-.hero__button:hover::before{
+.hero__button span{
+    position: relative;
+    z-index: 2;
+}
+
+.hero__button::before {
     content: '';
     position: absolute;
-    transition: 0.5s ease;
-    
+    inset: 0;
+    background: #381F16;
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+
+.hero__button:hover::before {
+    transform: translateX(0);
 }
 
 .hero__desc{
-    font-size: 30px;
+    max-width: 400px;
+    font-size: 2rem;
     font-family: 'pretendard';
     font-weight: 500;
     color: #272727;
@@ -116,15 +128,19 @@ img {
 }
 .hero__title{
     font-family: 'Nanum Myeongjo';
-    font-size: 60px;
+    font-size: 4rem;
     color: #926A55;
     font-weight: 800;
 }
 
 @media (max-width: 768px) {
+    .header__nav{
+        padding-right: 0;
+    }
     .hero__inner {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .hero__visual,
@@ -142,12 +158,19 @@ img {
     .hero__content {
         align-items: center;
     }
+    .hero__button{
+        order: 2;
+    }
 
     .hero__desc {
-        font-size: 20px;
+        font-size: 2rem;
+        font-weight: 400;
+        order: 1;
     }
 
     .hero__title {
-        font-size: 38px;
+        font-size: 3rem;
+        order: 3;
     }
+    
 }
