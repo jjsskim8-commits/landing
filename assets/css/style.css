@@ -333,218 +333,154 @@ img {
     }
 }
 
-
-
 .product {
     width: 100%;
     padding: 80px 0;
     background-color: #fdf9f4;
+    overflow: hidden;
 }
 
 .product__container {
-    width: min(1280px, calc(100% - 160px));
+    width: min(1280px, calc(100% - 80px));
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 60px;
 }
-
-
-
 
 .product__left {
-    flex: 0 0 500px;
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    padding-left: 40px;
-    padding-bottom: 40px;
+    width: 500px;
+    flex-shrink: 0;
+    padding-bottom: 30px;
 }
 
-
 .product__bg {
-    max-width: 380px;
-    border-radius: 200px 200px 0 0;
-    overflow: hidden;
-    flex-shrink: 0;
+    width: 380px;
+    margin: 0 auto;
 }
 
 .product__bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
+    width: 100%;
+    height: auto;
 }
-
 
 .product__img-wrap {
     position: absolute;
-    bottom: 0;
     right: 0;
-    width: 200px;
-    height: 200px;
+    bottom: 0;
+    width: 180px;
 }
 
 .product__img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 .product__label {
     position: absolute;
-    left: -170px;
-    top: 60%;
-    transform: translateY(-50%) rotate(-90deg);
-    transform-origin: center center;
-    white-space: nowrap;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 2rem;
     font-weight: 400;
     color: #FFB131;
-    font-family: 'nanummyeongjo', serif;
+    font-family: "Nanum Myeongjo", serif;
+    white-space: nowrap;
 }
-
 
 .product__right {
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .product__title {
-    font-size: 26px;
+    margin: 0 0 16px;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 16px;
-    font-family: 'pretendard', sans-serif;
 }
 
 .product__line {
-    width: 30%;
+    width: 120px;
     height: 2px;
-    background-color: #272727;
     margin-bottom: 24px;
+    background-color: #272727;
 }
 
 .product__desc {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #272727;
-    line-height: 1.9;
     margin: 0;
-    font-family: 'pretendard', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #272727;
+    word-break: keep-all;
 }
-
-
 
 @media (max-width: 1024px) {
     .product__container {
-        width: calc(100% - 80px);
-        gap: 48px;
+        width: calc(100% - 48px);
+        gap: 40px;
     }
 
     .product__left {
-        flex: 0 0 380px;
-        padding-left: 36px;
-        padding-bottom: 36px;
+        width: 420px;
     }
 
     .product__bg {
-        width: 280px;
-        height: 360px;
+        width: 320px;
     }
 
     .product__img-wrap {
-        width: 160px;
-        height: 160px;
-        bottom: 0;
-        right: 0;
+        width: 150px;
     }
 
     .product__label {
-        transform: none;
-        top: -15%;
-        left: 10%;
-        font-size: 2rem;
-    }
-
-    .product__title {
-        font-size: 22px;
+        font-size: 1.5rem;
     }
 }
 
-
 @media (max-width: 768px) {
     .product {
-        padding: 48px 0;
+        padding: 60px 0;
     }
 
     .product__container {
-        width: calc(100% - 48px);
+        width: calc(100% - 32px);
         flex-direction: column;
-        gap: 32px;
         align-items: flex-start;
+        gap: 32px;
     }
 
     .product__left {
-        flex: none;
         width: 100%;
-        padding: 0;
-        overflow: visible;
+        padding-bottom: 20px;
     }
 
     .product__bg {
         width: 100%;
-        max-height: none;
-        margin: 0 auto;
-        padding-bottom: 100%;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .product__bg-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        max-width: 360px;
     }
 
     .product__img-wrap {
-        width: 42%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        bottom: -16px;
-        right: -30px;
+        width: 140px;
+    }
+
+    .product__label {
+        top: -10px;
+        font-size: 1.5rem;
     }
 
     .product__right {
         width: 100%;
     }
 
-    .product__label {
-        font-size: 1.5rem;
-        top: -5%;
-        left: 15%;
-    }
-
-
-    .product__title {
-        font-size: 1.25em;
-    }
-
     .product__line {
         width: 100%;
-        height: 2px;
-        background-color: #272727;
-    }
-
-    .product__desc {
-        font-size: 1rem;
-        word-break: keep-all;
     }
 }
+
+
 
 .product--reverse .product__container {
     flex-direction: row-reverse;
@@ -552,8 +488,9 @@ img {
 
 .product--reverse .product__label {
     left: auto;
-    right: -170px;
-    transform: translateY(-50%) rotate(90deg);
+    right: 50%;
+    transform: translateX(50%);
+    color: #ef8099;
 }
 
 .product--reverse .product__img-wrap {
@@ -561,33 +498,24 @@ img {
     left: 0;
 }
 
-.product--reverse .product__label {
-    color: #EF8099;
-}
-
 @media (max-width: 1024px) {
     .product--reverse .product__label {
-        right: 10%;
-        left: auto;
-        transform: none;
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 
-
 @media (max-width: 768px) {
-
-    .product__container,
     .product--reverse .product__container {
         flex-direction: column;
     }
 
     .product--reverse .product__img-wrap {
-        right: auto;
-        left: -30px;
+        left: 0;
     }
 }
 
-.product--lumiere .product__label {
+.product__label--peach {
     color: #F2996B;
 }
 
@@ -975,9 +903,9 @@ img {
 }
 
 .scent-point__inner {
-    width: min(100%, 62.5rem);
+    width: min(62.5rem, calc(100% - 2rem));
     margin: 0 auto;
-    padding: 0 clamp(1rem, 4vw, 2.5rem);
+    padding: 0;
 }
 
 .scent-point__title {
@@ -1012,12 +940,14 @@ img {
     padding: 1rem 1.5rem;
     border-radius: 999px;
     gap: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .scent-bubble__tag {
     flex-shrink: 0;
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
     background: #f3dfdf;
     display: flex;
@@ -1026,13 +956,17 @@ img {
     text-align: center;
     font-size: 1rem;
     color: #333;
+    word-break: keep-all;
 }
 
 .scent-bubble__text {
+    flex: 1;
+    min-width: 0;
     margin: 0;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     color: #222;
     word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .scent-bubble--gray {
@@ -1072,28 +1006,37 @@ img {
     .scent-bubble {
         max-width: 100%;
         min-height: auto;
-        padding: 1.5rem;
+        padding: 1rem;
         border-radius: 2rem;
+        gap: 1rem;
+        overflow: hidden;
     }
 
     .scent-bubble--gray,
     .scent-bubble--pink {
         margin-left: 0;
         margin-right: 0;
-        flex-direction: column;
         align-items: flex-start;
+    }
+    .scent-bubble--pink{
+        flex-direction: row-reverse;
     }
 
     .scent-bubble__tag {
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 4rem;
+        height: 4rem;
+        font-size: 1rem;
+    }
+    .scent-bubble__text{
         font-size: 1rem;
     }
 
     .scent-bubble--right::after,
     .scent-bubble--left::after {
-        display: none;
+        content: none;
     }
+    
+
 }
 
 /* footer */
