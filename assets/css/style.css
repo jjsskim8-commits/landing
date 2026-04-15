@@ -333,10 +333,10 @@ img {
     }
 }
 
+
 .product-slider {
     width: 100%;
     position: relative;
-    overflow: visible;
 }
 
 .product-slider .swiper-wrapper {
@@ -349,7 +349,7 @@ img {
 
 .product {
     width: 100%;
-    padding: 80px 0;
+    padding: 80px 0 120px;
     background: #fdf9f4;
     overflow: hidden;
 }
@@ -363,15 +363,26 @@ img {
 }
 
 .product__left {
-    position: relative;
     width: 500px;
     flex-shrink: 0;
-    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 70px;
+}
+
+.product__visual {
+    width: 380px;
+    display: grid;
+}
+
+.product__bg,
+.product__img-wrap {
+    grid-area: 1 / 1;
 }
 
 .product__bg {
-    width: 380px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .product__bg-img,
@@ -382,20 +393,32 @@ img {
 }
 
 .product__img-wrap {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     width: 180px;
+    justify-self: end;
+    align-self: end;
+    transform: translate(50%, 50%);
+    z-index: 1;
 }
 
 .product__label {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     font: 400 2rem "Nanum Myeongjo", serif;
-    color: #ffb131;
     white-space: nowrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+.product__label--gold {
+    color: #ffb131;
+}
+
+.product__label--pink {
+    color: #ef8099;
+}
+
+.product__label--peach {
+    color: #f2996b;
 }
 
 .product__right {
@@ -424,24 +447,24 @@ img {
     word-break: keep-all;
 }
 
+/* 2번째 영역 */
 .product--reverse .product__container {
     flex-direction: row-reverse;
 }
 
-.product--reverse .product__label {
-    left: auto;
-    right: 50%;
-    transform: translateX(50%);
-    color: #ef8099;
+.product--reverse .product__left {
+    flex-direction: row-reverse;
 }
 
 .product--reverse .product__img-wrap {
-    right: auto;
-    left: 0;
+    justify-self: start;
+    align-self: end;
+    transform: translate(-50%, 50%);
 }
 
-.product__label--peach {
-    color: #f2996b;
+/* 3번째 영역 */
+.product--label-left .product__left {
+    flex-direction: row;
 }
 
 /* pagination */
@@ -462,6 +485,10 @@ img {
 }
 
 @media (max-width: 1024px) {
+
+    .product{
+        padding: 70px 0 100px;
+    }
     .product__container {
         width: calc(100% - 48px);
         gap: 40px;
@@ -469,9 +496,11 @@ img {
 
     .product__left {
         width: 420px;
+        gap: 18px;
+        padding-bottom: 60px;
     }
 
-    .product__bg {
+    .product__visual {
         width: 320px;
     }
 
@@ -494,49 +523,49 @@ img {
         display: flex;
     }
 
-    .product-slider .swiper-slide {
-        width: 100% !important;
-    }
-
     .product {
-        padding: 60px 0 70px;
+        padding: 60px 0 90px;
     }
 
-    .product__container {
+    .product__container,
+    .product--reverse .product__container {
         width: calc(100% - 32px);
         flex-direction: column;
         align-items: flex-start;
         gap: 32px;
     }
 
-    .product--reverse .product__container {
-        flex-direction: column;
-    }
-
-    .product__left {
+    .product__left,
+    .product--reverse .product__left,
+    .product--label-left .product__left {
         width: 100%;
-        padding-bottom: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding-bottom: 30px;
     }
 
-    .product__bg {
+    .product__visual {
         width: 100%;
         max-width: 360px;
     }
 
     .product__img-wrap,
-    .product--reverse .product__img-wrap {
-        left: auto;
-        right: 0;
+    .product--reverse .product__img-wrap,
+    .product--label-left .product__img-wrap {
         width: 140px;
+        justify-self: end;
+        align-self: end;
+        transform: translate(35%, 35%);
     }
 
     .product__label,
-    .product--reverse .product__label {
-        top: -10px;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        font-size: 1.5rem;
+    .product--reverse .product__label,
+    .product--label-left .product__label {
+        writing-mode: horizontal-tb;
+        transform: none;
+        text-align: center;
+        width: 100%;
         text-align: center;
     }
 
