@@ -337,6 +337,7 @@ img {
 .product-slider {
     width: 100%;
     position: relative;
+    background: #fdf9f4;
 }
 
 .product-slider .swiper-wrapper {
@@ -345,8 +346,10 @@ img {
 
 .product-slider .swiper-slide {
     width: 100% !important;
+    height: auto;
 }
 
+/* ===== PRODUCT ===== */
 .product {
     width: 100%;
     padding: 80px 0 120px;
@@ -379,10 +382,6 @@ img {
 .product__bg,
 .product__img-wrap {
     grid-area: 1 / 1;
-}
-
-.product__bg {
-    width: 100%;
 }
 
 .product__bg-img,
@@ -447,7 +446,7 @@ img {
     word-break: keep-all;
 }
 
-/* 2번째 영역 */
+/* ===== MODIFIERS ===== */
 .product--reverse .product__container {
     flex-direction: row-reverse;
 }
@@ -462,12 +461,7 @@ img {
     transform: translate(-50%, 50%);
 }
 
-/* 3번째 영역 */
-.product--label-left .product__left {
-    flex-direction: row;
-}
-
-/* pagination */
+/* ===== PAGINATION ===== */
 .product-slider__pagination {
     display: none;
 }
@@ -484,11 +478,12 @@ img {
     background: #ef8099;
 }
 
+/* ===== 1024px ===== */
 @media (max-width: 1024px) {
-
-    .product{
+    .product {
         padding: 70px 0 100px;
     }
+
     .product__container {
         width: calc(100% - 48px);
         gap: 40px;
@@ -513,83 +508,126 @@ img {
     }
 }
 
+/* ===== 768px ===== */
 @media (max-width: 768px) {
-    .product-slider {
-        overflow: hidden;
-        background: #fdf9f4;
-    }
-
     .product-slider .swiper-wrapper {
         display: flex;
     }
 
+    .product-slider__pagination {
+        display: flex;
+        justify-content: center;
+        padding: 16px 0 24px;
+        background: #fdf9f4;
+    }
+
     .product {
-        padding: 60px 0 90px;
+        padding: 40px 0 56px;
     }
 
-    .product__container,
-    .product--reverse .product__container {
-        width: calc(100% - 32px);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-    }
-
-    .product__left,
-    .product--reverse .product__left,
-    .product--label-left .product__left {
+    .product__container {
         width: 100%;
         flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        padding-bottom: 30px;
+        gap: 0;
+    }
+
+    .product__left {
+        width: 100%;
+        padding: 0 24px;
+        display: block;
+    }
+
+    /* 모바일에서는 label 숨김 */
+    .product__label {
+        display: none;
     }
 
     .product__visual {
         width: 100%;
-        max-width: 360px;
+        padding-bottom: 32px;
     }
 
-    .product__img-wrap,
-    .product--reverse .product__img-wrap,
-    .product--label-left .product__img-wrap {
-        width: 140px;
+    .product__img-wrap {
+        width: 36%;
         justify-self: end;
         align-self: end;
-        transform: translate(35%, 35%);
+        transform: translate(8%, 0);
     }
 
-    .product__label,
-    .product--reverse .product__label,
-    .product--label-left .product__label {
-        writing-mode: horizontal-tb;
-        transform: none;
-        text-align: center;
-        width: 100%;
-        text-align: center;
+    .product--reverse .product__container {
+        flex-direction: column;
+    }
+
+    .product--reverse .product__left {
+        flex-direction: initial;
+    }
+
+    .product--reverse .product__img-wrap {
+        justify-self: end;
+        align-self: end;
+        transform: translate(8%, 0);
     }
 
     .product__right {
         width: 100%;
+        padding: 0 24px;
+    }
+
+    .product__title {
+        margin-bottom: 12px;
+        font-size: 1.25rem;
     }
 
     .product__line {
-        width: 100%;
+        width: 80px;
+        margin-bottom: 16px;
+    }
+
+    .product__desc {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .product__desc br {
+        display: none;
+    }
+}
+
+/* ===== 480px ===== */
+@media (max-width: 480px) {
+    .product {
+        padding: 32px 0 48px;
+    }
+
+    .product__left {
+        padding: 0 16px;
+    }
+
+    .product__right {
+        padding: 0 16px;
+    }
+
+    .product__title {
+        font-size: 1.125rem;
+    }
+
+    .product__desc {
+        font-size: 0.875rem;
+    }
+
+    .product__img-wrap {
+        width: 40%;
     }
 
     .product-slider__pagination {
-        display: block;
-        position: absolute;
-        left: 50% !important;
-        bottom: 18px !important;
-        transform: translateX(-50%);
-        width: auto !important;
-        line-height: 1;
-        z-index: 10;
+        padding: 14px 0 20px;
     }
 }
 
 
+
+
+/* ===== MIST PLAN ===== */
 .mist-plan {
     padding: 120px 0 140px;
     background: #f4f2ef;
@@ -602,64 +640,57 @@ img {
 }
 
 .mist-plan__logo {
+    width: 40px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
 }
 
-.mist-plan__sub {
-    margin: 8px 0 0;
-    font-size: clamp(1rem, 2.5vw, 1.75rem);
-    color: #2b2b2b;
-}
-
-.mist-plan__title {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 28px 0 0;
-    padding: 14px 28px;
-    border: 2px solid #2b2b2b;
-    border-radius: 999px;
-    font-family: "Nanum Myeongjo", serif;
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.1;
-    color: #2b2b2b;
-}
-
+.mist-plan__sub,
 .mist-plan__event {
-    margin: 18px 0 0;
     font-size: clamp(1rem, 2.5vw, 1.75rem);
     color: #2b2b2b;
 }
 
+.mist-plan__sub { margin: 8px 0 0; }
+.mist-plan__event { margin: 18px 0 0; }
+
+.mist-plan__title,
 .mist-plan__badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 30px 0 0;
-    padding: 12px 24px;
     border: 2px solid #2b2b2b;
     border-radius: 999px;
-    font-size: clamp(1rem, 2.5vw, 1.75rem);
     color: #2b2b2b;
 }
 
+.mist-plan__title {
+    margin: 28px 0 0;
+    padding: 14px 28px;
+    font-family: "Nanum Myeongjo", serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.mist-plan__badge {
+    margin: 30px 0 0;
+    padding: 12px 24px;
+    font-size: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+
+/* ===== MIST CARD ===== */
 .mist-plan__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 80px;
 }
 
-.mist-card {
-    padding: 0 22px;
-}
+.mist-card { padding: 0 22px; }
 
-.mist-card+.mist-card {
-    border-left: 2px solid #2b2b2b;
-}
+.mist-card + .mist-card { border-left: 2px solid #2b2b2b; }
 
 .mist-card__head {
     display: flex;
@@ -690,33 +721,38 @@ img {
     color: #2b2b2b;
 }
 
+/* 배경 이미지 + 오버레이로 텍스트 가독성 확보 */
 .mist-card__photo {
+    position: relative;
     margin-top: 24px;
     border-radius: 32px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 40px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.mist-card--01 .mist-card__photo {
-    background-image: url("../images/mist-bg-01.webp");
+.mist-card__photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.3));
+    pointer-events: none;
 }
 
-.mist-card--02 .mist-card__photo {
-    background-image: url("../images/mist-bg-02.webp");
-}
-
-.mist-card--03 .mist-card__photo {
-    background-image: url("../images/mist-bg-03.webp");
-}
+.mist-card--01 .mist-card__photo { background-image: url("../images/mist-bg-01.webp"); }
+.mist-card--02 .mist-card__photo { background-image: url("../images/mist-bg-02.webp"); }
+.mist-card--03 .mist-card__photo { background-image: url("../images/mist-bg-03.webp"); }
 
 .mist-card__product {
     width: 50%;
+    position: relative;
+    z-index: 1;
 }
 
 .mist-card__img {
@@ -726,6 +762,8 @@ img {
     object-fit: contain;
 }
 
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .mist-plan {
         padding: 100px 0 120px;
@@ -735,14 +773,8 @@ img {
         width: calc(100% - 80px);
     }
 
-    .mist-plan__title {
-        padding: 12px 24px;
-    }
-
-
-    .mist-plan__badge {
-        padding: 10px 20px;
-    }
+    .mist-plan__title { padding: 12px 24px; }
+    .mist-plan__badge { padding: 10px 20px; }
 
     .mist-plan__list {
         grid-template-columns: repeat(2, 1fr);
@@ -750,21 +782,14 @@ img {
         margin-top: 64px;
     }
 
-    .mist-card {
-        padding: 0 18px;
-    }
+    .mist-card { padding: 0 18px; }
+    .mist-card__head { min-height: 150px; }
 
     .mist-card:nth-child(3) {
         grid-column: 1 / -1;
         width: 50%;
         margin: 0 auto;
     }
-
-    .mist-card__head {
-        min-height: 150px;
-    }
-
-
 }
 
 @media (max-width: 768px) {
@@ -772,29 +797,16 @@ img {
         padding: 80px 0 100px;
     }
 
-    .mist-plan__inner {
-        width: calc(100% - 48px);
-    }
-
-    .mist-plan__logo {
-        width: 32px;
-    }
-
-    .mist-plan__sub {
-        margin-top: 6px;
-    }
-
+    .mist-plan__inner { width: calc(100% - 48px); }
+    .mist-plan__logo { width: 32px; }
+    .mist-plan__sub { margin-top: 6px; }
     .mist-plan__title {
         display: inline-block;
         line-height: 1.3;
         padding: 10px 18px;
         margin-top: 22px;
     }
-
-    .mist-plan__event {
-        line-height: 1.5;
-    }
-
+    .mist-plan__event { line-height: 1.5; }
     .mist-plan__badge {
         line-height: 1.5;
         padding: 10px 16px;
@@ -803,53 +815,31 @@ img {
 
     .mist-plan__list {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
         margin-top: 56px;
     }
 
-    .mist-card {
-        padding: 0;
-    }
+    .mist-card { padding: 0; }
+    .mist-card:nth-child(3) { width: 100%; }
+    .mist-card + .mist-card { border-left: 0; }
+    .mist-card__head { min-height: auto; }
+    .mist-card__num { width: 44px; height: 44px; margin-bottom: 14px; }
+    .mist-card__name { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+    .mist-card__product { display: none; }
 
-    .mist-card:nth-child(3) {
-        width: 100%;
+    .mist-card__photo {
+        margin-top: 16px;
+        min-height: 220px;
+        padding: 32px 20px;
+        border-radius: 24px;
     }
-
-    .mist-card+.mist-card {
-        border-left: 0;
-    }
-
-    .mist-card__head {
-        min-height: auto;
-        margin-bottom: 20px;
-    }
-
-    .mist-card__num {
-        width: 44px;
-        height: 44px;
-        margin-bottom: 18px;
-    }
-
 }
 
 @media (max-width: 480px) {
-    .mist-plan {
-        padding: 64px 0 80px;
-    }
-
-    .mist-plan__inner {
-        width: calc(100% - 32px);
-    }
-
-    .mist-plan__title {
-        padding: 8px 14px;
-    }
-
-
-    .mist-plan__badge {
-        padding: 8px 12px;
-    }
-
+    .mist-plan { padding: 64px 0 80px; }
+    .mist-plan__inner { width: calc(100% - 32px); }
+    .mist-plan__title { padding: 8px 14px; }
+    .mist-plan__badge { padding: 8px 12px; }
 }
 
 .intro {

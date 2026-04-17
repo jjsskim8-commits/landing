@@ -1,26 +1,16 @@
-let productSwiper = null;
+const mq = window.matchMedia('(max-width: 768px)');
 
-function initProductSwiper() {
-    const isMobile = window.innerWidth <= 768;
-
-    if (isMobile && !productSwiper) {
-        productSwiper = new Swiper('.product-slider', {
+function initSwiper() {
+    if (mq.matches) {
+        new Swiper('.product-slider', {
             slidesPerView: 1,
-            spaceBetween: 0,
-            speed: 600,
             pagination: {
                 el: '.product-slider__pagination',
                 clickable: true,
             },
         });
     }
-
-    if (!isMobile && productSwiper) {
-        productSwiper.destroy(true, true);
-        productSwiper = null;
-    }
 }
 
-// 실행
-window.addEventListener('load', initProductSwiper);
-window.addEventListener('resize', initProductSwiper);
+initSwiper();
+mq.addEventListener('change', () => location.reload()); // 리사이즈 시 재초기화
