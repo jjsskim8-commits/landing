@@ -7,72 +7,65 @@
     <title>JS향수</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="JS Fragrance 랜딩페이지 - 시그니처 향수 라인업과 브랜드 스토리를 소개합니다.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <header class="header layout-container">
+    <header class="header">
         <div class="header__left"></div>
-
+    
         <div class="header__logo">
-            <img src="assets/images/icon/logo.svg" alt="로고">
+            <img src="assets/images/icon/logo.svg" alt="JS Fragrance 로고">
         </div>
-        <nav class="header__nav">
-            <div class="header__icons">
-                <a href="#" class="header__icon_link" aria-label="로그인">
-                    <img src="assets/images/icon/navi_login.svg" alt="로그인">
-                </a>
-
-            </div>
+    
+        <nav class="header__nav" aria-label="상단 메뉴">
+            <a href="#" class="header__icon-link" aria-label="로그인">
+                <img src="assets/images/icon/navi_login.svg" alt="">
+            </a>
         </nav>
     </header>
-    <main class="hero">
-        <div class="hero__inner layout-container">
 
-            <!-- 왼쪽 이미지 -->
-            <div class="hero__visual">
-                <img class="hero__image" src="assets/images/hero-img1.webp" alt="향수 이미지">
-            </div>
-
-            <!-- 오른쪽: 제목 → 설명 → CTA -->
+    <main>
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__inner container">
+            <figure class="hero__visual">
+                <img class="hero__image" src="assets/images/hero-img1.webp" alt="JS 향수 대표 제품 이미지">
+            </figure>
             <div class="hero__content">
-                <h2 class="hero__title">Fragrance</h2>
+                <h1 id="hero-title" class="hero__title">Fragrance</h1>
                 <p class="hero__desc">
                     섬세한 플로럴과 따뜻한 잔향이 어우러진
                     JS 오 드 퍼퓸을 만나보세요.
                 </p>
-                <a href="#" class="hero__button">
+                <a href="#product-lineup" class="hero__button">
                     <span class="hero__button-text">구매하기</span>
                 </a>
             </div>
-
         </div>
-    </main>
-    <section class="about">
-        <div class="about__inner layout-container">
+    </section>
+
+    <section class="about" aria-labelledby="about-title">
+        <div class="about__inner container">
             <div class="about__content">
-                <div class="about__left">
-                    <h2 class="about__title">JS<br>PERFUME</h2>
-                </div>
+                <h2 id="about-title" class="about__title">JS<br>PERFUME</h2>
                 <div class="about__line"></div>
-                <div class="about__right">
-                    <p class="about__desc">
-                        색감있는 기억이 됩니다. <br>
-                        향기는 단순한 향을 넘어 당신의 분위기와 순간을 완성합니다.JS 퍼퓸은 자연에서 영감을 받은 섬세한 조향으로, 부드럽고 깊이 있는 향을 구현합니다. 은은하게 퍼지는 향은
-                        일상에 감각을 더해주며, 당신만의 분위기를 더욱 또렷하게 만듭니다.
-                    </p>
-                </div>
+                <p class="about__desc">
+                    색감있는 기억이 됩니다. <br>
+                    향기는 단순한 향을 넘어 당신의 분위기와 순간을 완성합니다. JS 퍼퓸은 자연에서 영감을 받은 섬세한 조향으로, 부드럽고 깊이 있는 향을 구현합니다. 은은하게 퍼지는 향은
+                    일상에 감각을 더해주며, 당신만의 분위기를 더욱 또렷하게 만듭니다.
+                </p>
             </div>
         </div>
     </section>
 
 
-    <section class="product-slider swiper">
+    <section id="product-lineup" class="product-slider swiper" aria-label="대표 향수 라인업">
     <div class="swiper-wrapper">
 
         <!-- 1 -->
-        <section class="product swiper-slide">
-            <div class="product__container layout-container">
+        <article class="product swiper-slide">
+            <div class="product__container container">
                 <div class="product__media">
                     <span class="product__label product__label--gold">SOLARA Eau de Parfum</span>
                     <div class="product__visual">
@@ -93,11 +86,11 @@
                     </p>
                 </div>
             </div>
-        </section>
+        </article>
 
         <!-- 2 -->
-        <section class="product product--reverse swiper-slide">
-            <div class="product__container layout-container">
+        <article class="product product--reverse swiper-slide">
+            <div class="product__container container">
                 <div class="product__media">
                     <span class="product__label product__label--pink">BLUSH BLOOM Eau de Parfum</span>
                     <div class="product__visual">
@@ -118,11 +111,11 @@
                     </p>
                 </div>
             </div>
-        </section>
+        </article>
 
         <!-- 3 -->
-        <section class="product swiper-slide">
-            <div class="product__container layout-container">
+        <article class="product swiper-slide">
+            <div class="product__container container">
                 <div class="product__media">
                     <span class="product__label product__label--peach">Lumiere Eau de Parfum</span>
                     <div class="product__visual">
@@ -145,14 +138,14 @@
                     </p>
                 </div>
             </div>
-        </section>
+        </article>
 
     </div>
     <div class="product-slider__pagination swiper-pagination"></div>
 </section>
 
     <section class="mist-plan">
-        <div class="mist-plan__inner layout-container">
+        <div class="mist-plan__inner container">
             <img class="mist-plan__logo" src="assets/images/icon/logo.svg" alt="로고">
             <p class="mist-plan__sub">- 단독 기획 -</p>
 
@@ -210,7 +203,7 @@
     </section>
 
     <section class="intro">
-        <div class="intro__inner layout-container">
+        <div class="intro__inner container">
             <p class="intro__label">JS signature scent</p>
 
             <h2 class="intro__title">
@@ -232,47 +225,48 @@
     </section>
 
 
-    <section class="notes">
-        <div class="notes__inner layout-container">
+    <section class="notes" aria-labelledby="notes-title">
+        <div class="notes__inner container">
+            <h2 id="notes-title" hidden>향 노트 소개</h2>
 
-            <div class="note-item">
+            <article class="note-item">
                 <div class="note-item__content">
                     <h3 class="note-item__title">TOP NOTE</h3>
                     <p class="note-item__desc">새벽의 풀숲에서 시작되는 청량한 숨결</p>
                     <p class="note-item__sub">(a refreshing breath beginning in the grass at dawn)</p>
                 </div>
-                <div class="note-item__visual">
-                    <img src="assets/images/top-note.webp" alt="">
-                </div>
-            </div>
+                <figure class="note-item__visual">
+                    <img src="assets/images/top-note.webp" alt="TOP NOTE 이미지">
+                </figure>
+            </article>
 
-            <div class="note-item">
+            <article class="note-item">
                 <div class="note-item__content">
                     <h3 class="note-item__title">MIDDLE NOTE</h3>
                     <p class="note-item__desc">햇살 아래 천천히 피어나는 부드러운 꽃의 결</p>
                     <p class="note-item__sub">(a soft floral layer blooming under warm sunlight)</p>
                 </div>
-                <div class="note-item__visual">
-                    <img src="assets/images/middle-note.webp" alt="">
-                </div>
-            </div>
+                <figure class="note-item__visual">
+                    <img src="assets/images/middle-note.webp" alt="MIDDLE NOTE 이미지">
+                </figure>
+            </article>
 
-            <div class="note-item">
+            <article class="note-item">
                 <div class="note-item__content">
                     <h3 class="note-item__title">BASE NOTE</h3>
                     <p class="note-item__desc">잔잔하게 남아 하루를 감싸는 우디한 여운</p>
                     <p class="note-item__sub">(a woody trail that gently lingers through the day)</p>
                 </div>
-                <div class="note-item__visual">
-                    <img src="assets/images/base-note.webp" alt="">
-                </div>
-            </div>
+                <figure class="note-item__visual">
+                    <img src="assets/images/base-note.webp" alt="BASE NOTE 이미지">
+                </figure>
+            </article>
 
         </div>
     </section>
 
     <section class="scent-point">
-        <div class="scent-point__inner layout-container">
+        <div class="scent-point__inner container">
             <h2 class="scent-point__title">
                 “향 좋다”는 말 듣는<br>
                 사람들의 공통점
@@ -305,10 +299,11 @@
             </div>
         </div>
     </section>
+    </main>
 
 
     <footer class="footer">
-        <div class="footer__inner layout-container">
+        <div class="footer__inner container">
             <div class="footer__brand">
                 <h2 class="footer__logo">JS <span>Fragrance</span></h2>
                 <p class="footer__text">
@@ -350,7 +345,8 @@
                 <h3 class="footer__title">SUBSCRIBE</h3>
 
                 <form class="footer__form">
-                    <input type="email" class="footer__input" placeholder="Your email">
+                    <label for="subscribe-email" class="visually-hidden">이메일 주소</label>
+                    <input id="subscribe-email" type="email" class="footer__input" placeholder="Your email" autocomplete="email">
                     <button type="submit" class="footer__button">
                         <img src="assets/images/icon/arrow_btn.svg" alt="이메일버튼">
                     </button>
@@ -366,7 +362,7 @@
     </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>

@@ -1,16 +1,32 @@
-const mq = window.matchMedia('(max-width: 768px)');
+const mq = window.matchMedia("(max-width: 768px)");
+let productSwiper = null;
 
-function initSwiper() {
-    if (mq.matches) {
-        new Swiper('.product-slider', {
+function mountProductSwiper() {
+    if (!productSwiper) {
+        productSwiper = new Swiper(".product-slider", {
             slidesPerView: 1,
             pagination: {
-                el: '.product-slider__pagination',
+                el: ".product-slider__pagination",
                 clickable: true,
             },
         });
     }
 }
 
-initSwiper();
-mq.addEventListener('change', () => location.reload()); // 리사이즈 시 재초기화
+function unmountProductSwiper() {
+    if (productSwiper) {
+        productSwiper.destroy(true, true);
+        productSwiper = null;
+    }
+}
+
+function syncProductSwiper() {
+    if (mq.matches) {
+        mountProductSwiper();
+    } else {
+        unmountProductSwiper();
+    }
+}
+
+syncProductSwiper();
+mq.addEventListener("change", syncProductSwiper);
