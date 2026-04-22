@@ -66,36 +66,95 @@ h3 {
 
 /* header */
 
+/* header */
 .header {
     width: 100%;
     height: 100px;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     align-items: center;
-    box-sizing: border-box;
-}
-
-.header__left {
-    flex: 1;
+    justify-content: space-between;
 }
 
 .header__logo {
+    flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 40px;
+    flex-shrink: 0;
+}
+.header__logo img{
+    width: 40px;
+    height: auto;
 }
 
 .header__nav {
-    flex: 1;
+    flex: 2;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
-.header__icon-link img {
+.header__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__menu-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f1a17;
+    letter-spacing: 0.01em;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.header__menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: #926A55;
+    transition: width 0.25s ease;
+}
+
+.header__menu-link:hover::after {
+    width: 100%;
+}
+
+.header__menu-icon {
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
+}
+.header__icon-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .header__menu {
+        gap: 1.25rem;
+        margin-right: 1.25rem;
+    }  
+}
+
+@media (max-width: 480px) {
+    .header__menu {
+        gap: 0.875rem;
+        margin-right: 1rem;
+    }
 }
 
 /* ===== Hero ===== */

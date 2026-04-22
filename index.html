@@ -13,17 +13,22 @@
 
 <body>
     <header class="header">
-        <div class="header__left"></div>
-    
         <div class="header__logo">
             <img src="assets/images/icon/logo.svg" alt="JS Fragrance 로고">
         </div>
     
         <nav class="header__nav" aria-label="상단 메뉴">
-            <a href="#" class="header__icon-link" aria-label="로그인">
-                <img src="assets/images/icon/navi_login.svg" alt="">
-            </a>
+            <ul class="header__menu">
+                <li><a href="#" class="header__menu-link">컬렉션</a></li>
+                <li><a href="#" class="header__menu-link">향기</a></li>
+                <li><a href="#" class="header__menu-link">브랜드</a></li>
+                <li><a href="#" class="header__menu-link">노트</a></li>
+            </ul>
         </nav>
+    
+        <a href="#" class="header__icon-link" aria-label="로그인">
+            <img class="header__menu-icon" src="assets/images/icon/login.svg" alt="">
+        </a>
     </header>
 
     <main>
