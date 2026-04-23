@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <meta name="description" content="JS Fragrance 랜딩페이지 - 시그니처 향수 라인업과 브랜드 스토리를 소개합니다.">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -68,11 +67,9 @@
     </section>
 
 
-    <section id="product-lineup" class="product-slider swiper" aria-label="대표 향수 라인업">
-    <div class="swiper-wrapper">
-
+    <section id="product-lineup" class="product-list" aria-label="대표 향수 라인업">
         <!-- 1 -->
-        <article class="product swiper-slide">
+        <article class="product">
             <div class="product__container container">
                 <div class="product__media">
                     <span class="product__label product__label--gold">SOLARA Eau de Parfum</span>
@@ -97,7 +94,7 @@
         </article>
 
         <!-- 2 -->
-        <article class="product product--reverse swiper-slide">
+        <article class="product product--reverse">
             <div class="product__container container">
                 <div class="product__media">
                     <span class="product__label product__label--pink">BLUSH BLOOM Eau de Parfum</span>
@@ -122,7 +119,7 @@
         </article>
 
         <!-- 3 -->
-        <article class="product swiper-slide">
+        <article class="product">
             <div class="product__container container">
                 <div class="product__media">
                     <span class="product__label product__label--peach">Lumiere Eau de Parfum</span>
@@ -147,10 +144,7 @@
                 </div>
             </div>
         </article>
-
-    </div>
-    <div class="product-slider__pagination swiper-pagination"></div>
-</section>
+    </section>
 
     <section class="mist-plan">
         <div class="mist-plan__inner container">
@@ -370,7 +364,6 @@
     </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>
