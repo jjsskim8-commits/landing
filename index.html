@@ -13,17 +13,25 @@
 
 <body>
     <header class="header">
-        <div class="header__left"></div>
-    
-        <div class="header__logo">
-            <img src="assets/images/icon/logo.svg" alt="JS Fragrance 로고">
-        </div>
-    
-        <nav class="header__nav" aria-label="상단 메뉴">
-            <a href="#" class="header__icon-link" aria-label="로그인">
-                <img src="assets/images/icon/navi_login.svg" alt="">
+        <div class="header__inner container">
+            <nav class="header__nav header__nav--left" aria-label="상단 메뉴 왼쪽">
+                <ul class="header__menu">
+                    <li class="header__item"><a href="#product-lineup" class="header__link">컬렉션</a></li>
+                    <li class="header__item"><a href="#" class="header__link">시그니처</a></li>
+                </ul>
+            </nav>
+
+            <a href="#" class="header__logo" aria-label="JS Fragrance 홈">
+                <img src="assets/images/icon/logo.svg" alt="JS Fragrance 로고">
             </a>
-        </nav>
+
+            <nav class="header__nav header__nav--right" aria-label="상단 메뉴 오른쪽">
+                <ul class="header__menu">
+                    <li class="header__item"><a href="#" class="header__link">브랜드</a></li>
+                    <li class="header__item"><a href="#" class="header__link">스토리</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -35,7 +43,7 @@
             <div class="hero__content">
                 <h1 id="hero-title" class="hero__title">Fragrance</h1>
                 <p class="hero__desc">
-                    섬세한 플로럴과 따뜻한 잔향이 어우러진
+                    은은한 플로럴과 따뜻한 잔향이 머무는
                     JS 오 드 퍼퓸을 만나보세요.
                 </p>
                 <a href="#product-lineup" class="hero__button">
