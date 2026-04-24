@@ -189,7 +189,7 @@
                 <article class="mist-card mist-card--03">
                     <div class="mist-card__head">
                         <span class="mist-card__num">03</span>
-                        <h3 class="mist-card__name">FRUITY<br>ROSE BERRY</h3>
+                        <h3 class="mist-card__name">FRUITY<br><span class="mist-card__name-line">ROSE BERRY</span></h3>
                     </div>
                     <div class="mist-card__photo">
 
@@ -270,96 +270,104 @@
     <section class="scent-point">
         <div class="scent-point__inner container">
             <h2 class="scent-point__title">
-                “향 좋다”는 말 듣는<br>
-                사람들의 공통점
+                실제 사용자가 남긴 향의 인상
             </h2>
 
             <p class="scent-point__desc">
-                향에 민감한 사람들이 실제로 선택하는 기준
+                가까이 있을 때 더 매력적인 향이라는 평가를 받은 리뷰만 모았습니다.
             </p>
 
-            <div class="scent-point__list">
-                <div class="scent-bubble scent-bubble--right scent-bubble--gray">
-                    <div class="scent-bubble__tag">퍼퓸MD<br>김**</div>
-                    <p class="scent-bubble__text">부담 없이 매일 쓰기 좋은 은은한 향</p>
-                </div>
-
-                <div class="scent-bubble scent-bubble--left scent-bubble--pink">
-                    <div class="scent-bubble__tag">20대여성<br>이**</div>
-                    <p class="scent-bubble__text">가까이 있을수록 더 매력적인 향기</p>
-                </div>
-
-                <div class="scent-bubble scent-bubble--right scent-bubble--gray">
-                    <div class="scent-bubble__tag">향수바이어<br>이**</div>
-                    <p class="scent-bubble__text">머리 아프지 않고 은은하게 지속되는 향</p>
-                </div>
-
-                <div class="scent-bubble scent-bubble--left scent-bubble--pink">
-                    <div class="scent-bubble__tag">마케터<br>최**</div>
-                    <p class="scent-bubble__text">시간이 지날수록 깊어지는 잔향</p>
-                </div>
+            <div class="scent-point__testimonials">
+                <article class="scent-point__testimonial">
+                    <span class="scent-point__profile" aria-hidden="true">김</span>
+                    <div class="scent-point__testimonial-body">
+                        <p class="scent-point__testimonial-text">하루 종일 부담 없이 유지되고, 가까이에서 맡았을 때 더 고급스럽게 느껴집니다.</p>
+                        <p class="scent-point__testimonial-meta">퍼퓸 MD / 30대</p>
+                    </div>
+                </article>
+                <article class="scent-point__testimonial">
+                    <span class="scent-point__profile" aria-hidden="true">이</span>
+                    <div class="scent-point__testimonial-body">
+                        <p class="scent-point__testimonial-text">강하지 않은데 존재감이 있어 미팅이나 데일리 룩에 가장 자주 손이 가는 향입니다.</p>
+                        <p class="scent-point__testimonial-meta">브랜드 마케터 / 20대</p>
+                    </div>
+                </article>
+                <article class="scent-point__testimonial">
+                    <span class="scent-point__profile" aria-hidden="true">최</span>
+                    <div class="scent-point__testimonial-body">
+                        <p class="scent-point__testimonial-text">처음보다 잔향이 더 매력적이라, 향수에 민감한 사람에게도 추천하기 좋았습니다.</p>
+                        <p class="scent-point__testimonial-meta">향수 바이어 / 30대</p>
+                    </div>
+                </article>
             </div>
+        </div>
+    </section>
+
+    <section class="scent-finder" id="scent-finder" aria-labelledby="scent-finder-title">
+        <div class="scent-finder__inner container">
+            <div class="scent-finder__copy">
+                <p class="scent-finder__eyebrow">FIND YOUR SCENT</p>
+                <h2 class="scent-finder__title" id="scent-finder-title">당신의 취향을 알려주세요</h2>
+                <p class="scent-finder__desc">취향을 남겨주시면 어울리는 향을 추천해드릴게요.</p>
+            </div>
+
+            <form class="scent-finder__form" action="#" method="post">
+                <div class="scent-finder__field">
+                    <label class="scent-finder__label" for="finder-name">이름</label>
+                    <input class="scent-finder__input" type="text" id="finder-name" name="name" placeholder="이름을 입력해주세요" />
+                </div>
+
+                <div class="scent-finder__field">
+                    <label class="scent-finder__label" for="finder-email">이메일</label>
+                    <input class="scent-finder__input" type="email" id="finder-email" name="email" placeholder="이메일을 입력해주세요" />
+                </div>
+
+                <fieldset class="scent-finder__field scent-finder__field--choice">
+                    <legend class="scent-finder__label">선호하는 향</legend>
+                    <div class="scent-finder__choices">
+                        <input class="scent-finder__radio" type="radio" id="finder-floral" name="scent-note" value="floral" />
+                        <label class="scent-finder__choice" for="finder-floral">플로럴</label>
+
+                        <input class="scent-finder__radio" type="radio" id="finder-musk" name="scent-note" value="musk" />
+                        <label class="scent-finder__choice" for="finder-musk">머스크</label>
+
+                        <input class="scent-finder__radio" type="radio" id="finder-woody" name="scent-note" value="woody" />
+                        <label class="scent-finder__choice" for="finder-woody">우디</label>
+
+                        <input class="scent-finder__radio" type="radio" id="finder-citrus" name="scent-note" value="citrus" />
+                        <label class="scent-finder__choice" for="finder-citrus">시트러스</label>
+                    </div>
+                </fieldset>
+
+                <div class="scent-finder__field">
+                    <label class="scent-finder__label" for="finder-message">메시지</label>
+                    <textarea class="scent-finder__textarea" id="finder-message" name="message" rows="3" placeholder="추가로 원하는 분위기가 있다면 알려주세요 (선택)"></textarea>
+                </div>
+
+                <button class="scent-finder__submit" type="submit">나만의 향 찾기</button>
+            </form>
         </div>
     </section>
     </main>
 
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="footer__inner container">
             <div class="footer__brand">
-                <h2 class="footer__logo">JS <span>Fragrance</span></h2>
-                <p class="footer__text">
-                    a scent that lingers in your day,<br>
-                    a fragrance that remains as a memory
-                </p>
-                <p class="footer__text">
-                    we create fragrances that capture emotions<br>
-                    and moments, not just simple scents.<br>
-                    we propose scents that quietly permeate<br>
-                    your daily life.
-                </p>
+                <h2 class="footer__logo">JS Fragrance</h2>
+                <p class="footer__text">당신의 하루에 오래 남는 향.</p>
             </div>
 
-            <div class="footer__menu">
-                <h3 class="footer__title">CATEGORIES</h3>
-                <ul class="footer__list">
-                    <li><a href="#">SIGNATURE SCENT</a></li>
-                    <li><a href="#">DAILY PERFUME</a></li>
-                    <li><a href="#">BEST SELLER</a></li>
-                    <li><a href="#">GIFT SET</a></li>
-                </ul>
+            <div class="footer__info" id="contact-info">
+                <h3 class="footer__title">고객 안내</h3>
+                <p class="footer__meta">이메일: contact@jsfragrance.com</p>
+                <p class="footer__meta">운영시간: Mon - Fri / 10:00 - 17:00</p>
+                <p class="footer__meta footer__meta--muted">사업자 정보는 추후 업데이트될 예정입니다.</p>
             </div>
 
-            <div class="footer__tags">
-                <h3 class="footer__title">TAG CLOUD</h3>
-                <div class="footer__tag-list">
-                    <a href="#" class="footer__tag">FLORAL</a>
-                    <a href="#" class="footer__tag">MUSK</a>
-                    <a href="#" class="footer__tag">WOODY</a>
-                    <a href="#" class="footer__tag">SENSUAL</a>
-                    <a href="#" class="footer__tag">ELEGANT</a>
-                    <a href="#" class="footer__tag">SIGNATURE</a>
-                    <a href="#" class="footer__tag">CALM</a>
-                </div>
-            </div>
-
-            <div class="footer__subscribe">
-                <h3 class="footer__title">SUBSCRIBE</h3>
-
-                <form class="footer__form">
-                    <label for="subscribe-email" class="visually-hidden">이메일 주소</label>
-                    <input id="subscribe-email" type="email" class="footer__input" placeholder="Your email" autocomplete="email">
-                    <button type="submit" class="footer__button">
-                        <img src="assets/images/icon/arrow_btn.svg" alt="이메일버튼">
-                    </button>
-                </form>
-
-                <div class="footer__sns">
-                    <a href="#"><img src="assets/images/icon/instagram.svg" alt="인스타그램"></a>
-                    <a href="#"><img src="assets/images/icon/facebook.svg" alt="페이스북"></a>
-                    <a href="#"><img src="assets/images/icon/youtube.svg" alt="유튜브"></a>
-                </div>
-            </div>
+        </div>
+        <div class="footer__bottom container">
+            <p class="footer__copyright">© 2026 JS Fragrance. All rights reserved.</p>
         </div>
     </footer>
 
