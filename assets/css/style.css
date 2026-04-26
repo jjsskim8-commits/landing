@@ -9,6 +9,10 @@
     --container-max: 1280px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     width: min(var(--container-max), calc(100% - 40px));
     margin: 0 auto;
@@ -180,10 +184,16 @@ h3 {
     justify-content: flex-end;
     align-items: center;
     padding: 1rem 0;
+    opacity: 0;
+    animation: heroFadeIn 0.8s ease forwards;
 }
 
 .hero__image {
-    width: min(31.25rem, 100%);
+    width: clamp(18rem, 40vw, 31.25rem);
+    max-width: 100%;
+    transform: translateY(16px) scale(0.98);
+    filter: drop-shadow(0 1.25rem 2rem rgba(90, 56, 40, 0.12));
+    animation: heroImageFloat 0.8s ease forwards;
 }
 
 .hero__content {
@@ -203,6 +213,8 @@ h3 {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    opacity: 0;
+    animation: heroFadeUp 0.7s ease forwards 0.15s;
 }
 
 .hero__desc {
@@ -212,6 +224,8 @@ h3 {
     color: #272727;
     line-height: 1.8;
     letter-spacing: 0.01em;
+    opacity: 0;
+    animation: heroFadeUp 0.7s ease forwards 0.3s;
 }
 
 .hero__button {
@@ -226,6 +240,8 @@ h3 {
     border-radius: 999px;
     border: 0.125rem solid transparent;
     box-shadow: 0 0.5rem 1.5rem rgba(90, 56, 40, 0.12);
+    opacity: 0;
+    animation: heroFadeUp 0.7s ease forwards 0.45s;
 }
 
 .hero__button:hover {
@@ -239,7 +255,53 @@ h3 {
     box-shadow: 0 0 0 0.1875rem rgba(63, 42, 32, 0.25);
 }
 
-@media (max-width: 900px) {
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroImageFloat {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__visual,
+    .hero__image,
+    .hero__title,
+    .hero__desc,
+    .hero__button {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+
+@media (max-width: 1024px) {
     .header {
         min-height: auto;
         padding: 1rem 0 0.5rem;
@@ -272,6 +334,12 @@ h3 {
 
     .hero__visual {
         grid-column: 1 / 13;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero__image {
+        width: clamp(18rem, 54vw, 30rem);
     }
 
     .hero__content {
@@ -312,10 +380,6 @@ h3 {
         padding-block: 1.5rem 2.5rem;
     }
 
-    .hero__image {
-        width: min(26rem, 88vw);
-    }
-
     .hero__title {
         font-size: 3rem;
     }
@@ -347,6 +411,10 @@ h3 {
         width: calc(100% - 1.5rem);
         row-gap: 1rem;
         padding-block: 1rem 2rem;
+    }
+
+    .hero__image {
+        width: clamp(16rem, 76vw, 22rem);
     }
 
     .hero__title {
@@ -1559,6 +1627,76 @@ h3 {
     font-size: 1rem;
     line-height: 1.6;
     color: #3a3a3a;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal__content {
+    width: min(100%, 400px);
+    padding: 32px;
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.is-open .modal__content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal__text {
+    margin: 0 0 24px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #272727;
+    word-break: keep-all;
+}
+
+.modal__btn {
+    min-width: 96px;
+    min-height: 44px;
+    padding: 0 24px;
+    border: 0;
+    border-radius: 999px;
+    background: #926A55;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal__btn:hover {
+    background: #2d1b14;
+}
+
+.modal__btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(146, 106, 85, 0.24);
 }
 
 @media (max-width: 1024px) {
