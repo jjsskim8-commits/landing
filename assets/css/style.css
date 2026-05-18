@@ -636,7 +636,7 @@ h3 {
 }
 
 .product__label {
-    font: 400 48px "Nanum Myeongjo", serif;
+    font: 700 32px "Nanum Myeongjo", serif;
     white-space: nowrap;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -757,10 +757,8 @@ h3 {
         width: min(150px, 42%);
     }
 
-    .product__label {
-        font-size: 48px;
-    }
 }
+
 
 /* ===== 768px ===== */
 @media (max-width: 768px) {
